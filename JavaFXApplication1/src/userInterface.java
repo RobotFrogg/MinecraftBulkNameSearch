@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -32,7 +35,7 @@ public class userInterface extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        nameListInput = new javax.swing.JTextArea();
         sidenav = new javax.swing.JPanel();
         searchbutton = new javax.swing.JPanel();
         searchIcon = new javax.swing.JLabel();
@@ -54,9 +57,9 @@ public class userInterface extends javax.swing.JFrame {
             }
         });
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        nameListInput.setColumns(20);
+        nameListInput.setRows(5);
+        jScrollPane2.setViewportView(nameListInput);
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -135,7 +138,11 @@ public class userInterface extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        ArrayList nameList = new ArrayList<>(Arrays.asList(nameListInput.getText().split(",")));
+        for(int i = 0; i < nameList.size(); i++) {   
+            System.out.print(nameList.get(i));
+        }  
+
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -181,7 +188,7 @@ public class userInterface extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea nameListInput;
     private javax.swing.JLabel searchIcon;
     private javax.swing.JPanel searchbutton;
     private javax.swing.JPanel sidenav;
