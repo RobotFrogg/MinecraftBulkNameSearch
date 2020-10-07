@@ -1,3 +1,5 @@
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -16,6 +18,7 @@ public class userInterface extends javax.swing.JFrame {
     /**
      * Creates new form userInterface
      */
+    ArrayList<String> nameList = new ArrayList<String>( ); 
     public userInterface() {
         initComponents();
     }
@@ -138,9 +141,10 @@ public class userInterface extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ArrayList nameList = new ArrayList<>(Arrays.asList(nameListInput.getText().split(",")));
+        nameList = new ArrayList<>(Arrays.asList(nameListInput.getText().split("\n")));
         for(int i = 0; i < nameList.size(); i++) {   
-            System.out.print(nameList.get(i));
+            System.out.println(nameList.get(i));
+            System.out.println("BREAK");
         }  
 
         
